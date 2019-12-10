@@ -145,12 +145,12 @@ class bifpn(nn.Module):
             td_laterals[i] = self.bottom_up_fpn_convs[i - 1]([
                 td_laterals[i],
                 inputs[i],
-                 F.max_pool2d(
-                    td_laterals[i - 1], kernel_size=2)])
+                 F.interpolate(
+                    td_laterals[i - 1], scale_factor=0.5, mode='nearest')])
         td_laterals.append(
             self.bottom_up_fpn_convs[-1]([
-                inputs[-1],  F.max_pool2d(
-                    td_laterals[-1], kernel_size=2)]))
+                inputs[-1],  F.interpolate(
+                    td_laterals[-1], scale_factor=0.5, mode='nearest')]))
         outputs = td_laterals
         return outputs
 
