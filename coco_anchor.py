@@ -12,11 +12,11 @@ model = dict(
     ),
     neck=dict(
         type='BiFPN',
-        in_channels=[24, 40, 112, 320], # efficientnet-b0
+        in_channels=[40, 112, 320], # efficientnet-b0
         # in_channels=[32, 48, 136, 384], # efficientnet-b3
-        out_channels=160,
+        out_channels=64,
         num_outs=5,
-        start_level=1,
+        start_level=0,
         end_level=-1,
         add_extra_convs=True,
         stack=1,
@@ -25,7 +25,7 @@ model = dict(
     bbox_head=dict(
         type='RetinaHead',
         num_classes=81,
-        in_channels=160,
+        in_channels=64,
         stacked_convs=4,
         feat_channels=256,
         octave_base_scale=4,
@@ -40,7 +40,7 @@ model = dict(
             gamma=1.5, # 2.0 -> 1.5
             alpha=0.25,
             loss_weight=1.0),
-        loss_bbox=dict(type='SmoothL1Loss', beta=0.11, loss_weight=1.0)))
+        loss_bbox=dict(type='SmoothL1Loss', beta=0.10, loss_weight=50 / 4.)))
 # training and testing settings
 train_cfg = dict(
     assigner=dict(
