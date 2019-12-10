@@ -95,7 +95,7 @@ class bifpn(nn.Module):
                 out_channels,
                 1,
                 norm_cfg=norm_cfg,
-                activation=self.activation,
+                activation=None,
                 inplace=False)
             td_conv = torch.nn.Sequential(td_sep_conv, td_pw_conv)
             self.top_down_lateral_convs.append(
@@ -119,7 +119,7 @@ class bifpn(nn.Module):
                 out_channels,
                 1,
                 norm_cfg=norm_cfg,
-                activation=self.activation,
+                activation=None,
                 inplace=False)
             e_l_conv = torch.nn.Sequential(e_l_sep_conv, e_l_pw_conv)
             num_ins = 3 if i < self.num_outs - 2 else 2
