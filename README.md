@@ -1,6 +1,6 @@
 # EfficientDet-bifpn
 
-| net | COCO2017 | |
+| net | COCO2017 minival| |
 | ---- | ---- | ---- |
 | D0 |  31.9| -|
 
