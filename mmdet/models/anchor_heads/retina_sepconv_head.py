@@ -21,7 +21,7 @@ from mmdet.core import (AnchorGenerator, anchor_target, delta2bbox, force_fp32,
                         multi_apply, multiclass_nms)
 
 
-# 46799: add truncated normal similar to tensorflow, copy from pytorch-master branch
+# add truncated normal similar to tensorflow, copy from pytorch-master branch
 
 
 def _no_grad_trunc_normal_(tensor, mean, std, a, b):
@@ -98,7 +98,7 @@ def kaiming_trunc_normal_(tensor, a=0, mode='fan_in', nonlinearity='leaky_relu')
     with torch.no_grad():
         return _no_grad_trunc_normal_(tensor, mean=0., std=std, a=a, b=b)
 #####################################################################################################################
-# 46799: add truncated normal initialization
+# add truncated normal initialization
 
 
 def xavier_trunc_normal_init(moudle, gain=1., bias=0):
