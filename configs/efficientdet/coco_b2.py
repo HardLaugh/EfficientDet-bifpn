@@ -5,10 +5,7 @@ norm_cfg=dict(type='SyncBN', momentum=0.01,
                 eps=1e-3, requires_grad=True)
 model = dict(
     type='RetinaNet',
-    # pretrained=None,
-    # pretrained='/home/46799/mmdetection/weights/efficientnet-b3-5fb5a3c3.pth',
-    pretrained='/home/46799/mmdetection/weights/efficientnet-b2-8bb594d6.pth',
-    # pretrained='/home/46799/mmdetection/weights/resnet101-5d3b4d8f.pth',
+    pretrained='efficientnet-b2-8bb594d6.pth',
     backbone=dict(
         type='EfficientNet',
         arch='efficientnet-b2',
@@ -69,8 +66,7 @@ test_cfg = dict(
 
 # dataset settings
 dataset_type = 'CocoDataset'
-data_root = '/data/.cache/ocrTraining_Pluto_common_coco_25759/coco/coco/'
-# data_root = '/dahuafs/groupdata/ocralgorithm/09_Pluto/46799/coco/coco/'
+data_root = './coco/'
 size = 768
 img_scale = (size, size)
 ratio_range = (0.1, 2.0)
