@@ -1,4 +1,5 @@
-this repo is based on mmdetection.
+this repo is based on mmdetection.  
+I don't have much time to do it，emm just for fun
 
 train efficientdet with the same number of iterations as tensorflow-efficientdet from paperv2 in arxiv[https://arxiv.org/abs/1911.09070v2] , results are 2~4 mAP lower   
 efficientdet-d0  32.4mAP batchsize=128 epoch=300 (new)  
