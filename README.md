@@ -9,6 +9,6 @@ efficientdet-d3  43.6mAP batchsize=32 epoch=115
 efficientdet-d5  47.4mAP batchsize=16 epoch=38  
 
 
-i did not release code about EMA, which has little improvement for this repo(but ema can give a very good result for early epoch)
+i did not release code about EMA. it is suggested that you can install mmcv, which already has ema hook
 
 Please let me know any possible improvement
